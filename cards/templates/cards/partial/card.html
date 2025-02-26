@@ -1,6 +1,28 @@
-{% load static %}
+{% load static %} {% for card in cards %}
+<a href="{% url "cards:view-detail" card.pk %}">
+  <div class="conteiner-card">
+    <img src="{% static "img/card/card.png" %}" alt="" srcset="" class="bg-card">
+    <div class="cont-foto-player">
+      <img src="{{card.foto.url}}" alt="" class="player-foto" />
+    </div>
+    <p class="name-card">{{card.first_name}} {{card.last_name}}</p>
+    <div class="card-stats">
+      <p class="name-def">{{card.defesa}}</p>
+      <p class="name-pas">{{card.passe}}</p>
+      <p class="name-hab">{{card.habilidade}}</p>
+      <p class="name-chu">{{card.chute}}</p>
+      <p class="name-due">{{card.duelo}}</p>
+      <p class="name-fis">{{card.fisico}}</p>
+    </div>
+    <div class="card-stats-top">
+      <p class="logo-team">
+        <img src="{% static "img/teams/"|add:card.time|add:".webp" %}"
+        alt="{{card.time}}">
+      </p>
+      <p class="over-all">{{card.over_all}}</p>
+      <p class="pos">{{card.posicao}}</p>
+    </div>
+  </div>
+</a>
 
-<div class="conteiner">
-    <img src="{% static "img/card/2-Micael_Farias_FLySP7B.jpg" %}" alt="">
-    <img src="{% static "img/card/card.png" %}" alt="" srcset="">
-</div>
+{% endfor %}

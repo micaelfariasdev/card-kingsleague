@@ -1,0 +1,215 @@
+@charset "UFT-8";
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@100..800&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Martian Mono';
+    font-weight: bolder;
+}
+
+html {
+    width: 98.5vw;
+}
+
+header {
+    background: #000;
+    padding: 20px;
+}
+
+header .conteiner {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    justify-content: center;
+    justify-items: end;
+}
+
+header .conteiner .logo img {
+    width: 80%;
+    /* Ajuste o tamanho conforme necessário */
+    height: auto;
+    display: block;
+    filter: sepia(1) saturate(33) hue-rotate(317deg) contrast(1);
+}
+
+
+
+header .conteiner .nav,
+a {
+    color: #F58534;
+    text-decoration: none;
+}
+
+main .conteiner {
+    display: grid;
+    justify-content: center;
+    background: #e9dabb;
+}
+
+.grid-cards {
+    margin-inline: auto;
+    padding: 20px;
+    display: flex;
+    max-width: 830px;
+    flex-flow: row wrap;
+    justify-content: start;
+    gap: 20px;
+}
+
+.conteiner-card {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    position: relative;
+    width: 150px;
+    filter: drop-shadow(3px 3px 4px rgba(0, 0, 0, 0.445));
+    transition: all 0.5s;
+}
+
+.conteiner-card:hover {
+    transform: scale(1.1) translateY(-5px);
+    filter: drop-shadow(0px 0px 5px rgb(0, 68, 255));
+
+}
+
+.conteiner-card .bg-card {
+    width: 150px
+}
+
+.conteiner-card .cont-foto-player {
+    position: absolute;
+    width: 91px;
+    left: 34%;
+    top: 20%;
+    overflow: hidden;
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 16%);
+    height: 83px;
+}
+
+.conteiner-card .player-foto {
+    width: 100%;
+}
+
+.conteiner-card .name-card {
+    position: absolute;
+    top: 55%;
+    font-size: 70%;
+    color: #2974B5;
+    text-shadow: 0px 0px 1px #F585348d;
+}
+
+.conteiner-card .card-stats {
+    display: grid;
+    width: 79%;
+    grid-template-columns: 1fr 1fr;
+    position: absolute;
+    justify-items: center;
+    top: 61%;
+    gap: 5px;
+    left: 20%;
+    font-size: .9em;
+    color: #2974B5;
+}
+
+.conteiner-card .card-stats-top {
+    display: grid;
+    width: 4ch;
+    grid-template-columns: 1fr;
+    position: absolute;
+    justify-items: center;
+    align-items: center;
+    top: 18%;
+    gap: 3px;
+    left: 11%;
+    font-size: .75em;
+    color: #F58534;
+}
+
+.conteiner-card .logo-team {
+    display: flex;
+    justify-content: center;
+}
+
+.conteiner-card .logo-team img {
+    height: 32px;
+    width: 32px;
+    transform: scale(1);
+}
+
+/* configuration view card details */
+
+.conteiner-detail {
+    border-radius: 20px;
+    justify-self: center;
+    padding: 20px;
+    margin-inline: auto;
+    background: rgb(63, 61, 61);
+    margin: 30px;
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    color: white;
+}
+
+.conteiner-detail .cont-foto-player {
+    grid-row: span 4;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center bottom;
+    mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 1) 30%);
+}
+
+.conteiner-detail .info-player {
+    display: flex;
+    gap: 5px;
+    flex-flow: column nowrap;
+}
+
+.conteiner-detail .info-player .pos {
+    color: gray;
+
+}
+
+.conteiner-detail .info-player#info1 {
+    padding-inline: 20px;
+    font-size: 2em;
+}
+
+
+.conteiner-detail .info-player#info2 {
+    grid-row: span 2;
+    align-items: end;
+    padding-inline: 20px;
+}
+
+.conteiner-detail .info-player#info2 .over-all {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    padding: 10px;
+    background: #F58534;
+    border-radius: 10px;
+    align-content: center;
+}
+
+.conteiner-detail .card-stats {
+    grid-column: 2 / span 3;
+    grid-row: 3 / span 4;
+    display: flex;
+    gap: 20px;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    padding: 20px;
+}
+
+.conteiner-detail .stats {
+    width: 25%;
+    text-align: center;
+    padding: 10px;
+    background: gray;
+    border-radius: 10px;
+}

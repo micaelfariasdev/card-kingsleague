@@ -17,19 +17,20 @@ times = [
 ]
 
 pos = [
-    ('GK','Goleiro'),
-    ('MEI','Meio-Campo'),
-    ('ATA','Atacante'),
-    ('DEF','Defensor'),
+    ('GK', 'Goleiro'),
+    ('MEI', 'Meio-Campo'),
+    ('ATA', 'Atacante'),
+    ('DEF', 'Defensor'),
 ]
 
-def path_and_rename(instance, filename):
+
+def path_and_rename(instance):
     """
     Função para gerar o caminho dinâmico do arquivo baseado no campo 'name'
     """
-    _, file_extension = os.path.splitext(filename)
-    cam = f'card/{instance.pk}-{instance.first_name}_{instance.last_name}{file_extension}'
+    cam = f'card/{instance.pk}-{instance.first_name}_{instance.last_name}.png'
     return cam
+
 
 class CardCreate(models.Model):
     first_name = models.CharField(max_length=25)
@@ -61,21 +62,26 @@ class CardCreate(models.Model):
         MaxValueValidator(99)
     ])
     foto = models.ImageField(upload_to=path_and_rename, blank=True, null=True)
+    over_all = models.IntegerField(editable=False)
+
+    def over_all_mid(self):
+        atributos = [self.defesa, self.passe, self.habilidade,
+                     self.chute, self.duelo, self.fisico]
+        return int(sum(atributos) / len(atributos))
 
     def save(self, *args, **kwargs):
-        # Chama o método save do modelo para garantir que a foto seja salva primeiro
-        super().save(*args, **kwargs)
+        
+        is_new = self.pk is None  
 
-        # Se houver uma foto, remove o fundo e sobrescreve a imagem
-        if self.foto:
-            # Caminho para o arquivo temporário
+        super().save(*args, **kwargs)  
+
+        self.over_all = self.over_all_mid()
+        super().save(*args, **kwargs)  
+
+        if is_new and self.foto:
             input_image_path = self.foto.path
-            output_image_path = input_image_path  # Sobrescreve a imagem original
-
-            # Chama a função de remoção de fundo
+            output_image_path = input_image_path  
             remove_background(input_image_path, output_image_path)
-
-        super().save(*args, **kwargs)
 
 
     def __str__(self):

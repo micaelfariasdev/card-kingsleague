@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cards KL</title>
+    <link rel="stylesheet" href="{% static "css/global/style.css" %}">
+  </head>
+  <body>
+    <header>
+      <div class="conteiner">
+        <div class="logo">
+          <a href="{% url 'cards:home' %}">
+            <img src="{% static "img/logo/logo.png" %}" alt="">
+          </a>
+        </div>
+        <div class="nav">
+          <a href="{% url 'cards:home' %}">Home</a>
+          <a href="">Create</a>
+          <a href="">View</a>
+        </div>
+      </div>
+    </header>
+    {% block main %}{% endblock main %}
+  </body>
+</html>

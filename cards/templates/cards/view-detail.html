@@ -1,0 +1,49 @@
+{% extends "global/base.html" %} {% block main %} {% load static %}
+<main>
+  <div class="conteiner">
+    <div class="conteiner-detail">
+      <div
+        class="cont-foto-player"
+        style="background-image: url('{{ card.foto.url }}');"
+      ></div>
+      <div class="info-player" id="info1">
+        <p class="name-card">{{card.first_name.upper}} {{card.last_name.upper}}</p>
+        <p class="pos">{{card.posicao}}</p>
+      </div>
+      <div class="info-player" id="info2">
+        <p class="logo-team">
+          <img src="{% static "img/teams/"|add:card.time|add:".webp" %}"
+          alt="{{card.time}}">
+        </p>
+        <div class="over-all"><p>OVER</p><p>{{card.over_all}}</p></div>
+      </div>
+      <div class="card-stats">
+        <div class="stats name-def">
+          <p>DEF</p>
+          <p>{{card.defesa}}</p>
+        </div>
+        <div class="stats name-pas">
+          <p>PAS</p>
+          <p>{{card.passe}}</p>
+        </div>
+        <div class="stats name-hab">
+          <p>HAB</p>
+          <p>{{card.habilidade}}</p>
+        </div>
+        <div class="stats name-chu">
+          <p>CHU</p>
+          <p>{{card.chute}}</p>
+        </div>
+        <div class="stats name-due">
+          <p>DUE</p>
+          <p>{{card.duelo}}</p>
+        </div>
+        <div class="stats name-fis">
+          <p>FIS</p>
+          <p>{{card.fisico}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+{% endblock main %}

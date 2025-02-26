@@ -32,10 +32,3 @@ def remove_background(input_image_path, output_image_path):
         print(f"Imagem salva em: {output_image_path}")
     else:
         print(f"Erro: {response.status_code} - {response.text}")
-
-# Caminho para a imagem de entrada e saída
-input_image = 'imagem.jpg'
-output_image = 'imagem_sem_fundo.png'
-
-# Chamada da função
-remove_background(input_image, output_image)
