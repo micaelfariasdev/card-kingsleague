@@ -1,0 +1,48 @@
+{% extends "global/base.html" %} {% block main %} {% load static %}
+<main>
+  <div class="conteiner">
+    <form action="" method="post">
+      {% csrf_token %}
+      <div class="conteiner-create">
+        <div class="label-input" >
+          {{ form.first_name.label_tag }}{{ form.first_name }}
+        </div>
+        <div class="label-input" >
+          {{ form.last_name.label_tag }}{{ form.last_name }}
+        </div>
+        <div class="label-input">{{ form.time.label_tag }}{{ form.time }}</div>
+        <div
+          class="team-logo"
+          style='background-image: url({% static "img/teams/" %}));'
+        ></div>
+        <div class="over_all"><p id="over_all_value">50</p></div>
+        <div class="foto-player" style='background-image: url({% static "img/teams/" %}));'></div>
+        <div class="label-input">
+          {{ form.posicao.label_tag }}{{ form.posicao }}
+        </div>
+        <div class="stats">
+          <div class="label-input">
+            {{ form.defesa.label_tag }}{{ form.defesa }}<span type='value_stats' id="v_id_{{ form.defesa.name }}">{{ form.defesa.value }}</span>
+          </div>
+          <div class="label-input">
+            {{ form.passe.label_tag }}{{ form.passe }}<span type='value_stats' id="v_id_{{ form.passe.name }}">{{ form.passe.value }}</span>
+          </div>
+          <div class="label-input">
+            {{ form.habilidade.label_tag }}{{ form.habilidade }}<span type='value_stats' id="v_id_{{ form.habilidade.name }}">{{ form.habilidade.value }}</span>
+          </div>
+          <div class="label-input">
+            {{ form.chute.label_tag }}{{ form.chute }}<span type='value_stats' id="v_id_{{ form.chute.name }}">{{ form.chute.value }}</span>
+          </div>
+          <div class="label-input">
+            {{ form.duelo.label_tag }}{{ form.duelo }}<span type='value_stats' id="v_id_{{ form.duelo.name }}">{{ form.duelo.value }}</span>
+          </div>
+          <div class="label-input">
+            {{ form.fisico.label_tag }}{{ form.fisico }}<span type='value_stats' id="v_id_{{ form.fisico.name }}">{{ form.fisico.value }}</span>
+          </div>
+        </div>
+        <div class="label-input">{{ form.foto.label_tag }}{{ form.foto }}</div>
+      </div>
+    </form>
+  </div>
+</main>
+{% endblock main %}

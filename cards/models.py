@@ -40,27 +40,27 @@ class CardCreate(models.Model):
     defesa = models.IntegerField(validators=[
         MinValueValidator(0),
         MaxValueValidator(99)
-    ])
+    ], default=50)
     passe = models.IntegerField(validators=[
         MinValueValidator(0),
         MaxValueValidator(99)
-    ])
+    ], default=50)
     habilidade = models.IntegerField(validators=[
         MinValueValidator(0),
         MaxValueValidator(99)
-    ])
+    ], default=50)
     chute = models.IntegerField(validators=[
         MinValueValidator(0),
         MaxValueValidator(99)
-    ])
+    ], default=50)
     duelo = models.IntegerField(validators=[
         MinValueValidator(0),
         MaxValueValidator(99)
-    ])
+    ], default=50)
     fisico = models.IntegerField(validators=[
         MinValueValidator(0),
         MaxValueValidator(99)
-    ])
+    ], default=50)
     foto = models.ImageField(upload_to=path_and_rename, blank=True, null=True)
     over_all = models.IntegerField(editable=False)
 

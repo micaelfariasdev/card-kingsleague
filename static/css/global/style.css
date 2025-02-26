@@ -9,7 +9,7 @@
 }
 
 html {
-    width: 98.5vw;
+    width: 100vw;
 }
 
 header {
@@ -212,4 +212,58 @@ main .conteiner {
     padding: 10px;
     background: gray;
     border-radius: 10px;
+}
+
+/* style for card creation view */
+
+.conteiner-create {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.conteiner-create .team-logo {
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.conteiner-create label {
+    display: block;
+}
+
+.conteiner-create .label-input,
+.conteiner-create .stats {
+    grid-column: 1;
+}
+
+.conteiner-create .team-logo {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+    margin: 0 auto;
+}
+
+.conteiner-create .over_all {
+    grid-row: 3/span 2;
+    grid-column: 2;
+    background: gray;
+    width: 75px;
+    height: 75px;
+    border-radius: 10px;
+    text-align: center;
+    align-content: center;
+    font-size: 2.5em;
+    margin: 0 auto;
+}
+
+.conteiner-create .foto-player {
+    grid-column: 2;
+    grid-row: 5 / span 2;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-self: center;
 }
