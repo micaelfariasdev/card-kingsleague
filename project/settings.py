@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-9-m_+wx%6ty$7fb!zh4a@3w!b6voqv((!76k^&8i=u^od#@ggv
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'card-kingsleague.onrender.com'
+    'card-kingsleague.onrender.com',
+    'localhost'
 ]
 
 
@@ -122,9 +123,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",  # Diretório principal de arquivos estáticos
-]
+# Para coletar arquivos estáticos
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# Onde os arquivos CSS e JS estão
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 
 MEDIA_URL = '/media/'
