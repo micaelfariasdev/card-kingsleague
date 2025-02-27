@@ -27,7 +27,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-9-m_+wx%6ty$7fb!zh4a@3w!b6voqv((!76k^&8i=u^od#@ggv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DJANGO_DEBUG', 'False') == 'True'
+
 
 ALLOWED_HOSTS = [
     'card-kingsleague.onrender.com',
