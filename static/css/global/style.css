@@ -9,7 +9,7 @@
 }
 
 html {
-    width: 100vw;
+    height: 100vh;;
 }
 
 header {
@@ -159,6 +159,7 @@ main .conteiner {
     height: 100%;
     overflow: hidden;
     background-size: cover;
+    background-position: top center;
     mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 1) 30%);
 }
 

@@ -16,7 +16,7 @@ def view(request, id):
 def create(request):
     form = CardCreateForm()
     if request.method == 'POST':
-        form = CardCreateForm(request.POST)
+        form = CardCreateForm(request.POST, request.FILES)
         if form.is_valid():
             card = form.save()  # Salva o formulário
             # Redireciona para a view do card
