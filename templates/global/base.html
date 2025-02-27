@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cards KL</title>
     <link rel="stylesheet" href="{% static "css/global/style.css" %}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -23,6 +24,11 @@
       </div>
     </header>
     {% block main %}{% endblock main %}
+    <footer>
+      <div class="footer">
+        <p>created with ❤ by <a href="https://github.com/micaelfariasdev">Micael Farias</a> ⚙ Django</p>
+      </div>
+    </footer>
     <script src="{% static "js/scripts.js" %}"></script>
   </body>
 </html>

@@ -4,8 +4,9 @@ from .forms import CardCreateForm
 
 
 def home(request):
-    form = CardCreate.objects.all().order_by('-id')
-    return render(request, 'cards/home.html', {'cards': form, })
+    cards = CardCreate.objects.all().order_by('-id')
+    cards_over = CardCreate.objects.all().order_by('-over_all')
+    return render(request, 'cards/home.html', {'cards': cards, 'cards_over': cards_over})
 
 
 def view(request, id):
@@ -26,6 +27,3 @@ def create(request):
             # Caso o formulário não seja válido, redireciona de volta
             return redirect('create')
     return render(request, 'cards/create.html', {'form': form})
-
-
-

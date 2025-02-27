@@ -1,4 +1,4 @@
-{% load static %} {% for card in cards %}
+{% load static %} 
 <a href="{% url "cards:view-detail" card.pk %}">
   <div class="conteiner-card">
     <img src="{% static "img/card/card.png" %}" alt="" srcset="" class="bg-card">
@@ -29,4 +29,3 @@
   </div>
 </a>
 
-{% endfor %}

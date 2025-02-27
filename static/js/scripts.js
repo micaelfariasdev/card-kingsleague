@@ -79,3 +79,21 @@ fotoinput.addEventListener('change', function(event) {
         reader.readAsDataURL(file);  
     }
 });
+
+
+
+function scrollleft(div, sinal){
+    let body = document.querySelector('body').offsetWidth
+    let divset = document.querySelector('.'+div)
+    let cardset = document.querySelector('.'+div+' a').offsetWidth + 20
+    let scroll = cardset
+    let viewcards = Number(sinal + body) / scroll
+    let scrollall = Number(scroll * viewcards)
+
+    divset.scrollBy({
+        left: scrollall,
+        behavior: 'smooth'
+    })
+  
+}
+
