@@ -273,9 +273,11 @@ main .conteiner {
 
 .conteiner-create {
     display: grid;
+    justify-self: center;
     grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 10px;
+    max-width: 800px;
 }
 
 .conteiner-create .team-logo {
