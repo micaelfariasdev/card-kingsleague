@@ -20,16 +20,17 @@
         <div class="nav">
           <a href="{% url 'cards:home' %}">Home</a>
           <a href="{% url 'cards:create' %}">Create</a>
-          <a href="">View</a>
+         <!-- <a href="">View</a>-->
         </div>
       </div>
     </header>
     {% block main %}{% endblock main %}
     <footer>
       <div class="footer">
-        <p>created with ❤ by <a href="https://github.com/micaelfariasdev">Micael Farias</a> ⚙ Django</p>
+        <p>created with ❤ by <a href="https://github.com/micaelfariasdev" target='_blank' rel='external' >Micael Farias</a> ⚙ Django</p>
       </div>
     </footer>
     <script src="{% static "js/scripts.js" %}"></script>
   </body>
 </html>
+

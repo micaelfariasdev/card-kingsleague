@@ -17,7 +17,7 @@
     },
     "[html]": {
       "editor.formatOnSave": true,
-      "editor.defaultFormatter": "batisteo.vscode-django",
+      "editor.defaultFormatter": "HTMLHint.vscode-htmlhint",
       "editor.tabSize": 2,
       "editor.quickSuggestions": {
         "other": true,
@@ -35,7 +35,7 @@
     },
     "[django-html]": {
       "editor.formatOnSave": true,
-      "editor.defaultFormatter": "esbenp.prettier-vscode",
+      "editor.defaultFormatter": "batisteo.vscode-django",
       "editor.tabSize": 2,
       "editor.quickSuggestions": {
         "other": true,

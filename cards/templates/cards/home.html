@@ -3,22 +3,34 @@
   <div class="conteiner">
     <div class="grid-cards">
       <div class="scroll-button-conteiner">
-        <i class="fa-solid fa-arrow-left button-scroll b-left" onclick="scrollleft('id-order', '-')"></i>
-        <i class="fa-solid fa-arrow-right button-scroll b-right" onclick="scrollleft('id-order', '+')"></i>
+        <i
+          class="fa-solid fa-arrow-left button-scroll b-left"
+          onclick="scrollleft('id-order', '-')"
+        ></i>
+        <i
+          class="fa-solid fa-arrow-right button-scroll b-right"
+          onclick="scrollleft('id-order', '+')"
+        ></i>
       </div>
       <p>Cards Criados:</p>
-      <div  class="order-created id-order">
+      <div class="order-created id-order">
         <p></p>
         {% for card in cards %} {% include "cards/partial/card.html" %} {% endfor %}
       </div>
     </div>
     <div class="grid-cards">
       <div class="scroll-button-conteiner">
-        <i class="fa-solid fa-arrow-left button-scroll b-left" onclick="scrollleft('over-order', '-')"></i>
-        <i class="fa-solid fa-arrow-right button-scroll b-right" onclick="scrollleft('over-order', '+')"></i>
+        <i
+          class="fa-solid fa-arrow-left button-scroll b-left"
+          onclick="scrollleft('over-order', '-')"
+        ></i>
+        <i
+          class="fa-solid fa-arrow-right button-scroll b-right"
+          onclick="scrollleft('over-order', '+')"
+        ></i>
       </div>
       <p>Cards por Over:</p>
-      <div  class="order-created over-order">
+      <div class="order-created over-order">
         <p></p>
         {% for card in cards_over %} {% include "cards/partial/card.html" %} {% endfor %}
       </div>
