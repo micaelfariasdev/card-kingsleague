@@ -46,6 +46,7 @@ main .conteiner {
     display: grid;
     justify-content: center;
     background: #e9dabb;
+    padding: 20px;
 }
 
 .grid-cards {
@@ -158,7 +159,6 @@ main .conteiner {
     height: 100%;
     overflow: hidden;
     background-size: cover;
-    background-position: center bottom;
     mask-image: linear-gradient(to top, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 1) 30%);
 }
 
@@ -220,6 +220,7 @@ main .conteiner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    gap: 10px;
 }
 
 .conteiner-create .team-logo {
@@ -230,12 +231,13 @@ main .conteiner {
 }
 
 .conteiner-create label {
-    display: block;
+    display: inline-block;
 }
 
 .conteiner-create .label-input,
 .conteiner-create .stats {
     grid-column: 1;
+
 }
 
 .conteiner-create .team-logo {
@@ -266,4 +268,38 @@ main .conteiner {
     background-repeat: no-repeat;
     background-size: cover;
     align-self: center;
+}
+
+.conteiner-create .button {
+    display: block;
+    grid-column: span 2;
+}
+
+.conteiner-create .button button {
+    width: 100%;
+    border: none;
+    background: #2974B5;
+    padding: 10px;
+    height: 40px;
+    color: white;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.conteiner-create .button button:hover {
+    background: #6eb6f5;
+    color: white;
+}
+
+.conteiner-create input[type="text"],
+.conteiner-create select{
+    width: 100%;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid #2974B5;
+    padding-inline: 10px;
+}
+
+.conteiner-create input[type="range"]{
+    width: 100%;
 }

@@ -1,8 +1,17 @@
 {% extends "global/base.html" %} {% block main %} {% load static %}
 <main>
   <div class="conteiner">
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
       {% csrf_token %}
+      {% if form.errors %}
+        <ul>
+            {% for field in form %}
+                {% for error in field.errors %}
+                    <li>{{ error }}</li>
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    {% endif %}
       <div class="conteiner-create">
         <div class="label-input" >
           {{ form.first_name.label_tag }}{{ form.first_name }}
@@ -13,35 +22,36 @@
         <div class="label-input">{{ form.time.label_tag }}{{ form.time }}</div>
         <div
           class="team-logo"
-          style='background-image: url({% static "img/teams/" %}));'
+          style='background-image: url({% static "img/teams/capim_fc.webp" %});'
         ></div>
         <div class="over_all"><p id="over_all_value">50</p></div>
-        <div class="foto-player" style='background-image: url({% static "img/teams/" %}));'></div>
-        <div class="label-input">
-          {{ form.posicao.label_tag }}{{ form.posicao }}
+        <div class="foto-player" style='background-image: url({% static "default/default.png" %});'></div>
+          <div class="label-input">
+            {{ form.posicao.label_tag }}{{ form.posicao }}
+          </div>
+          <div class="stats">
+            <div class="label-input">
+              {{ form.defesa.label_tag }}<span type='value_stats' id="v_id_{{ form.defesa.name }}">{{ form.defesa.value }}</span>{{ form.defesa }}
+            </div>
+            <div class="label-input">
+              {{ form.passe.label_tag }}<span type='value_stats' id="v_id_{{ form.passe.name }}">{{ form.passe.value }}</span>{{ form.passe }}
+            </div>
+            <div class="label-input">
+              {{ form.habilidade.label_tag }}<span type='value_stats' id="v_id_{{ form.habilidade.name }}">{{ form.habilidade.value }}</span>{{ form.habilidade }}
+            </div>
+            <div class="label-input">
+              {{ form.chute.label_tag }}<span type='value_stats' id="v_id_{{ form.chute.name }}">{{ form.chute.value }}</span>{{ form.chute }}
+            </div>
+            <div class="label-input">
+              {{ form.duelo.label_tag }}<span type='value_stats' id="v_id_{{ form.duelo.name }}">{{ form.duelo.value }}</span>{{ form.duelo }}
+            </div>
+            <div class="label-input">
+              {{ form.fisico.label_tag }}<span type='value_stats' id="v_id_{{ form.fisico.name }}">{{ form.fisico.value }}</span>{{ form.fisico }}
+            </div>
+          </div>
+          <div class="label-input">{{ form.foto.label_tag }}{{ form.foto }}</div>
+          <div class="label-input button"><button type="submit">Criar</button></div>
         </div>
-        <div class="stats">
-          <div class="label-input">
-            {{ form.defesa.label_tag }}{{ form.defesa }}<span type='value_stats' id="v_id_{{ form.defesa.name }}">{{ form.defesa.value }}</span>
-          </div>
-          <div class="label-input">
-            {{ form.passe.label_tag }}{{ form.passe }}<span type='value_stats' id="v_id_{{ form.passe.name }}">{{ form.passe.value }}</span>
-          </div>
-          <div class="label-input">
-            {{ form.habilidade.label_tag }}{{ form.habilidade }}<span type='value_stats' id="v_id_{{ form.habilidade.name }}">{{ form.habilidade.value }}</span>
-          </div>
-          <div class="label-input">
-            {{ form.chute.label_tag }}{{ form.chute }}<span type='value_stats' id="v_id_{{ form.chute.name }}">{{ form.chute.value }}</span>
-          </div>
-          <div class="label-input">
-            {{ form.duelo.label_tag }}{{ form.duelo }}<span type='value_stats' id="v_id_{{ form.duelo.name }}">{{ form.duelo.value }}</span>
-          </div>
-          <div class="label-input">
-            {{ form.fisico.label_tag }}{{ form.fisico }}<span type='value_stats' id="v_id_{{ form.fisico.name }}">{{ form.fisico.value }}</span>
-          </div>
-        </div>
-        <div class="label-input">{{ form.foto.label_tag }}{{ form.foto }}</div>
-      </div>
     </form>
   </div>
 </main>

@@ -3,7 +3,11 @@
   <div class="conteiner-card">
     <img src="{% static "img/card/card.png" %}" alt="" srcset="" class="bg-card">
     <div class="cont-foto-player">
+      {% if card.foto %}
       <img src="{{card.foto.url}}" alt="" class="player-foto" />
+      {% else %}
+      <img src="{% static "default/default.png" %}" alt="" class="player-foto" />
+      {% endif %}
     </div>
     <p class="name-card">{{card.first_name}} {{card.last_name}}</p>
     <div class="card-stats">

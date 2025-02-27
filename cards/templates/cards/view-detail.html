@@ -2,10 +2,17 @@
 <main>
   <div class="conteiner">
     <div class="conteiner-detail">
+      {% if card.foto %}
       <div
         class="cont-foto-player"
         style="background-image: url('{{ card.foto.url }}');"
       ></div>
+      {% else %}
+      <div
+      class="cont-foto-player"
+      style="background-image: url('{% static "default/default.png" %}');"
+    ></div>
+      {% endif %}
       <div class="info-player" id="info1">
         <p class="name-card">{{card.first_name.upper}} {{card.last_name.upper}}</p>
         <p class="pos">{{card.posicao}}</p>
