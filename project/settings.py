@@ -26,7 +26,9 @@ SECRET_KEY = 'django-insecure-9-m_+wx%6ty$7fb!zh4a@3w!b6voqv((!76k^&8i=u^od#@ggv
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'card-kingsleague.onrender.com'
+]
 
 
 # Application definition
