@@ -101,14 +101,14 @@ function scrollleft(div, sinal){
 
 
 function downloadCard() {
-    const card = document.querySelector(".conteiner-card");
+    const card = document.querySelector(".cont-view-card > a");
     var name = document.querySelector(".name-card").textContent; 
     if (!card) {
         console.error("Elemento .conteiner-card não encontrado!");
         return;
     }
 
-    html2canvas(card, { useCORS: true, backgroundColor: null, width: 400 , height: 650 , scale: 2 }).then(canvas => {
+    html2canvas(card, { useCORS: true, backgroundColor: null, width: 650 , height: 650 , scale: 2 }).then(canvas => {
         const link = document.createElement('a');
         link.download = name+'_card.png';
         link.href = canvas.toDataURL('image/png');
