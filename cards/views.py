@@ -27,3 +27,9 @@ def create(request):
             # Caso o formulário não seja válido, redireciona de volta
             return redirect('create')
     return render(request, 'cards/create.html', {'form': form})
+
+
+def viewcard(request, id):
+    card = CardCreate.objects.get(id=id)
+    return render(request, 'cards/view-card.html', {'card': card})
+

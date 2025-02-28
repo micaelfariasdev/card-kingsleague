@@ -16,6 +16,7 @@
       <div class="info-player" id="info1">
         <p class="name-card">{{card.first_name.upper}} {{card.last_name.upper}}</p>
         <p class="pos">{{card.posicao}}</p>
+        <a href="{% url 'cards:view-card' card.pk %}">VER CARD</a>
       </div>
       <div class="info-player" id="info2">
         <p class="logo-team">

@@ -1,0 +1,13 @@
+{% extends 'global/base.html' %} {% block main %}
+  {% load static %}
+  <main>
+    <div class="conteiner">
+      <div class="cont-view-card">
+        {% include 'cards/partial/card.html' %}
+      </div>
+      <div class="label-input button">
+        <button onclick="downloadCard()">baixar</button>
+      </div>
+    </div>
+  </main>
+{% endblock %}

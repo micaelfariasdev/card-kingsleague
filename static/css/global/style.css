@@ -333,7 +333,7 @@ main .conteiner {
     grid-column: span 2;
 }
 
-.conteiner-create .button button {
+.conteiner .button button {
     width: 100%;
     border: none;
     background: #2974B5;
@@ -360,6 +360,34 @@ main .conteiner {
 
 .conteiner-create input[type="range"] {
     width: 100%;
+}
+
+/* view unique card */
+
+.cont-view-card {
+    justify-content: center;
+    display: flex;
+    height: 90%;
+    align-items: center;
+}
+
+
+.cont-view-card .conteiner-card {
+    pointer-events: none;
+    transform: scale(2.5);
+
+}
+
+.cont-view-card  a {
+    justify-items: center;
+    width: 650px;
+    height: 650px;
+    align-content: center;
+}
+
+
+.cont-view-card ~ .button {
+    margin: 30px;
 }
 
 footer .footer {
