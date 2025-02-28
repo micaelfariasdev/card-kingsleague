@@ -1,0 +1,11 @@
+capim_fc.webp
+dendele.webp
+desimpedidos_goti.webp
+fluxo.webp
+funkbol.webp
+furia.webp
+g3x.webp
+loud.webp
+nyvelados.webp
+real_elite.webp
+teams.txt
