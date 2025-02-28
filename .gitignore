@@ -1,23 +1,4 @@
-# Ignorar o banco de dados local SQLite
-db.sqlite3
+*__pycache__*
 
-# Ignorar os arquivos de migração
-*/migrations/*
-
-# Ignorar arquivos de log
-*.log
-
-# Ignorar arquivos de cache
-__pycache__/
-*.py[cod]
-
-# Ignorar diretórios virtuais (se estiver usando venv)
-venv/
 .env
-
-# Ignorar o arquivo de configuração do editor (Ex: VSCode)
-.vscode/
-.idea/
-
-# Ignorar arquivos de testes
-*.coverage
+db.sqlite3
