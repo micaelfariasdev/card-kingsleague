@@ -1,7 +1,13 @@
 {% load static %} 
 <a href="{% url "cards:view-detail" card.pk %}">
   <div class="conteiner-card">
+    {% if card.over_all > 80 %}
     <img src="{% static "img/card/card.png" %}" alt="" srcset="" class="bg-card">
+    {% elif  card.over_all > 70%}
+    <img src="{% static "img/card/card-prata.png" %}" alt="" srcset="" class="bg-card">
+    {% else %}
+    <img src="{% static "img/card/card-bronze.png" %}" alt="" srcset="" class="bg-card">
+    {% endif %}
     <div class="cont-foto-player">
       {% if card.foto %}
       <img src="{{card.foto.url}}" alt="" class="player-foto" />

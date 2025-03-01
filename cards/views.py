@@ -18,6 +18,9 @@ def create(request):
     form = CardCreateForm()
     if request.method == 'POST':
         form = CardCreateForm(request.POST, request.FILES)
+        print()
+        
+            
         if form.is_valid():
             card = form.save()  # Salva o formulário
             # Redireciona para a view do card
@@ -25,7 +28,7 @@ def create(request):
         else:
             print('Formulário não válido')
             # Caso o formulário não seja válido, redireciona de volta
-            return redirect('create')
+            return redirect('crards:home')
     return render(request, 'cards/create.html', {'form': form})
 
 

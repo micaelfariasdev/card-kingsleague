@@ -15,3 +15,5 @@ class CardCreateForm(forms.ModelForm):
             'duelo': forms.NumberInput(attrs={'type': 'range', 'min': 1, 'max': 99, 'step': 1, }),
             'fisico': forms.NumberInput(attrs={'type': 'range', 'min': 1, 'max': 99, 'step': 1, }),
         }
+        foto = forms.ImageField(required=False)
+        

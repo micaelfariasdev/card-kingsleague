@@ -61,8 +61,7 @@ class CardCreate(models.Model):
         MinValueValidator(0),
         MaxValueValidator(99)
     ], default=50)
-    foto = models.ImageField(upload_to='card/', blank=True, null=True, validators=[
-                             FileExtensionValidator(allowed_extensions=['jpg', 'jpeg', 'png'])])
+    foto = models.ImageField(upload_to='card/', blank=True, null=True)
     over_all = models.IntegerField(editable=False, null=True)
 
     def calcular_overall(self):
@@ -89,21 +88,33 @@ class CardCreate(models.Model):
 
         return round(overall, 2)
 
+    import os
+
     def save(self, *args, **kwargs):
         is_new = self.pk is None  # Verifica se é um novo objeto
         self.over_all = self.calcular_overall()
+
         # Primeiro salva o objeto para garantir que ele tenha um `pk`
         super().save(*args, **kwargs)
-        # Agora que o objeto tem um `pk`, verificamos se a imagem precisa ser renomeada
-        new_filename = f'{self.pk}-{self.first_name}_{self.last_name}.png'
-        os.rename(self.foto.path, f'media/card/{new_filename}')
-        super().save(*args, **kwargs)  # Salva novamente com o nome correto
-        self.foto.name = f'card/{new_filename}'
-        super().save(*args, **kwargs)  # Salva novamente com o nome correto
 
-        # Agora a imagem já existe no disco, então podemos processá-la
-        if is_new and self.foto and os.path.exists(self.foto.path):
-            remove_background(self.foto.path, self.foto.path)
+        # Se for um novo objeto e a imagem foi enviada
+        if is_new and self.foto:
+            new_filename = f'{self.pk}-{self.first_name}_{self.last_name}.png'
+            new_path = os.path.join('media', 'card', new_filename)
+
+            # Verifica se o arquivo de foto existe e renomeia
+            if os.path.exists(self.foto.path):
+                os.rename(self.foto.path, new_path)
+
+            # Atualiza o campo `foto` para o novo nome
+            self.foto.name = f'card/{new_filename}'
+
+            # Salva novamente o objeto com o novo nome de arquivo
+            super().save(*args, **kwargs)
+
+            # Agora a imagem já existe no disco, então podemos processá-la
+            if is_new and self.foto and os.path.exists(self.foto.path):
+                remove_background(self.foto.path, self.foto.path)
 
     def __str__(self):
         return self.first_name
